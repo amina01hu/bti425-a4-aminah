@@ -6,6 +6,7 @@
           <div class="row">
             <!-- post -->
             <app-postcard [class]="class" [post]="blogPosts"></app-postcard>
+            <div class="w-100"><app-paging [page]="page" (someEvent)="getPage($event)"></app-paging></div>
           </div>
         </div>
       </main>
@@ -16,7 +17,7 @@
           <header>
             <h3 class="h6">Latest Posts</h3>
           </header>
-          <app-latestposts [post]="blogPosts.slice(0,3)"></app-latestposts>
+          <app-latestposts></app-latestposts>
         <!-- Widget [Categories Widget]-->
         <app-categories></app-categories>
         <!-- Widget [Tags Cloud Widget]-->

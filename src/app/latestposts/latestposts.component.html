@@ -1,5 +1,5 @@
 <div *ngFor="let posts of post" class="widget latest-posts" >
-<a href="#">
+<a [routerLink]="['/post', posts._id]">
     <div class="item d-flex align-items-center">
       <div class="image"><img [src]="posts.featuredImage" alt="..." class="img-fluid"></div>
       <div class="title"><strong>{{posts.title}}</strong>

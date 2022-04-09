@@ -9,14 +9,14 @@
           <div class="avatar"><img src="/assets/img/user.svg" alt="..." class="img-fluid"></div>
           <div class="title"><span>{{post.postedBy}}</span></div></a>
         <div class="d-flex align-items-center flex-wrap">       
-          <div class="date"><i class="icon-clock">{{post.postDate}}</i></div>
+          <div class="date"><i class="icon-clock">{{post.postDate | date:'mediumDate'}}</i></div>
           <div class="views"><i class="icon-eye">{{post.views}}</i> </div>
           <div class="comments meta-last"><i class="icon-comment">{{post.comments.length}}</i></div>
         </div>
       </div>
       <div class="post-body" [innerHTML]="post.post">
       </div>
-      <div class="post-tags"><a *ngFor="let tag of post.tags" href="#" class="tag">{{tag}}</a></div>
+      <div class="post-tags"><a *ngFor="let tag of post.tags" [routerLink]="['/blog']" [queryParams]="{tag: tag.substring(1)}" class="tag">{{tag}}</a></div>
       <div class="post-comments">
         <header>
           <h3 class="h6">Post Comments<span class="no-of-comments">{{post.comments.length}}</span></h3>
@@ -25,7 +25,7 @@
           <div class="comment-header d-flex justify-content-between">
             <div class="user d-flex align-items-center">
               <div class="image"><img src="/assets/img/user.svg" alt="..." class="img-fluid rounded-circle"></div>
-              <div class="title"><strong>{{com.author}}</strong><span class="date">{{com.date}}</span></div>
+              <div class="title"><strong>{{com.author}}</strong><span class="date">{{com.date | date:'mediumDate'}}</span></div>
             </div>
           </div>
           <div class="comment-body" [innerHTML]="com.comment">
