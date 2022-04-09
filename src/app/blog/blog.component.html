@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+      <!-- Latest Posts -->
+      <main class="posts-listing col-lg-8"> 
+        <div class="container">
+          <div class="row">
+            <!-- post -->
+            <app-postcard [class]="class" [post]="blogPosts"></app-postcard>
+          </div>
+        </div>
+      </main>
+      <aside class="col-lg-4">
+        <!-- Widget [Search Bar Widget]-->
+        <app-searchwidget></app-searchwidget>
+        <!-- Widget [Latest Posts Widget] -->
+          <header>
+            <h3 class="h6">Latest Posts</h3>
+          </header>
+          <app-latestposts [post]="blogPosts.slice(0,3)"></app-latestposts>
+        <!-- Widget [Categories Widget]-->
+        <app-categories></app-categories>
+        <!-- Widget [Tags Cloud Widget]-->
+        <app-tags></app-tags>
+      </aside>
+    </div>
+  </div>
+  
