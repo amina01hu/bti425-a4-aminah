@@ -8,17 +8,20 @@ import { PostService } from 'app/post.service';
   styleUrls: ['./postdata.component.css']
 })
 export class PostdataComponent implements OnInit {
-  post: BlogPost;
+  posts:Array<BlogPost> = [];
   querySub:any = "";
   id:string;
   constructor(private pService:PostService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.querySub = this.route.params.subscribe(params =>{
-      this.pService.getPostbyId(params['id']).subscribe(
-        data => this.post = data
-      );
-     })     
+      this.id = params['id'];
+     })
+     this.pService.getPostbyId(this.id).subscribe( (data:any) => {
+       this.posts.push(data);
+     });
+
+     
   }
 
   ngOnDestroy(){

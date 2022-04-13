@@ -21,8 +21,8 @@ export class PostService {
     return this.http.get<BlogPost[]>(url);
   }
 
-  getPostbyId(id:number):Observable<BlogPost>{
-    return this.http.get<BlogPost>("http://localhost:8080/api/posts/" + id);
+  getPostbyId(id:string):Observable<BlogPost[]>{
+    return this.http.get<BlogPost[]>("http://localhost:8080/api/posts/" + id);
   }
 
   getCategories():Observable<any>{

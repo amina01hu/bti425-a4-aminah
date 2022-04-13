@@ -1,5 +1,5 @@
 <div *ngFor="let posts of post" class="{{class}}">
-    <div class="post-thumbnail"><a routerLink="/post"><img [src]="posts.featuredImage" alt="..." class="img-fluid"></a></div>
+    <div class="post-thumbnail"><a [routerLink]="['/post', posts._id]"><img [src]="posts.featuredImage" alt="..." class="img-fluid"></a></div>
     <div class="post-details">
       <div class="post-meta d-flex justify-content-between">
         <div class="date meta-last">{{posts.postDate | date:'mediumDate'}}</div>

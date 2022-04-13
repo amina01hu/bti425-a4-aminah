@@ -1,4 +1,5 @@
 <div class="post-single">
+  <div *ngFor="let post of posts">
     <div class="post-thumbnail"><img [src]="post.featuredImage" alt="..." class="img-fluid"></div>
     <div class="post-details">
       <div class="post-meta d-flex justify-content-between">
@@ -16,7 +17,7 @@
       </div>
       <div class="post-body" [innerHTML]="post.post">
       </div>
-      <div class="post-tags"><a *ngFor="let tag of post.tags" [routerLink]="['/blog']" [queryParams]="{tag: tag.substring(1)}" class="tag">{{tag}}</a></div>
+      <div *ngFor="let tag of post.tags" class="post-tags"><a [routerLink]="['/blog']" [queryParams]="{tag: tag.substring(1)}" class="tag">{{tag}}</a></div>
       <div class="post-comments">
         <header>
           <h3 class="h6">Post Comments<span class="no-of-comments">{{post.comments.length}}</span></h3>
@@ -32,6 +33,8 @@
           </div>
         </div>
       </div>
+      </div>
+      </div> 
       <div class="add-comment">
         <header>
           <h3 class="h6">Leave a reply</h3>
@@ -50,5 +53,4 @@
           </div>
         </form>
       </div>
-    </div>
   </div>
