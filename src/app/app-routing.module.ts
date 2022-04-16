@@ -6,9 +6,8 @@ import { PostComponent } from './post/post.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { FormsModule } from '@angular/forms';
 import { PoststableComponent } from './poststable/poststable.component';
-import { EditpostComponent } from './editpost/editpost.component';
 import { NewpostComponent } from './newpost/newpost.component';
-
+import { EditpostComponent } from './editpost/editpost.component';
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'blog', component: BlogComponent},
