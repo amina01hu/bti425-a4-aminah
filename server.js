@@ -75,6 +75,10 @@ app.delete("/api/posts/:id", (req,res)=>{
     });
 });
 
+app.get('*', function (req, res) {
+    res.sendfile('./dist/index.html'); // load our index.html file
+  });
+
 // Connect to the DB and start the server
 
 data.connect().then(()=>{
