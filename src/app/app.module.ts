@@ -18,6 +18,10 @@ import { PostdataComponent } from './postdata/postdata.component';
 import { PostService } from './post.service';
 import { PagingComponent } from './paging/paging.component';
 import { FooterpostsComponent } from './footerposts/footerposts.component';
+import { PoststableComponent } from './poststable/poststable.component';
+import { NewpostComponent } from './newpost/newpost.component';
+import { FormsModule } from '@angular/forms';
+import { EditpostComponent } from './editpost/editpost.component';
 
 @NgModule({
   declarations: [
@@ -35,12 +39,16 @@ import { FooterpostsComponent } from './footerposts/footerposts.component';
     TagsComponent,
     PostdataComponent,
     PagingComponent,
-    FooterpostsComponent
+    FooterpostsComponent,
+    PoststableComponent,
+    NewpostComponent,
+    EditpostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [PostService],
   bootstrap: [AppComponent]

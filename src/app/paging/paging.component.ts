@@ -11,8 +11,11 @@ export class PagingComponent implements OnInit {
   constructor() { }
   
   newPage(pageNum:number){
-    this.page = pageNum;
+    if(pageNum != 0){
+      this.page = pageNum;
     this.someEvent.next(this.page);
+    }
+    
   }
 
   ngOnInit(): void {
