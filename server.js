@@ -10,7 +10,7 @@ const dataService = require("./modules/data-service.js");
 
 const data = dataService(mongoDBConnectionString);
 const app = express();
-app.use(express.static('./bti425-a4-aminah'));
+app.use(express.static('./dist/bti425-a4-aminah'));
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -76,7 +76,7 @@ app.delete("/api/posts/:id", (req,res)=>{
 });
 
 app.get('*', function (req, res) {
-    res.sendfile('./index.html'); // load our index.html file
+    res.sendfile('./dist/index.html'); // load our index.html file
   });
 
 // Connect to the DB and start the server
