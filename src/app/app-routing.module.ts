@@ -12,8 +12,6 @@ const routes: Routes = [
   {path: 'blog', component: BlogComponent},
   {path: 'post', component:PostComponent},
   {path: 'admin', component: PoststableComponent},
-  {path: 'post/:id', component: PostComponent},
-  {path: 'admin/post/:id', component: EditpostComponent},
   {path: 'admin/newPost', component:NewpostComponent},
   {path: '', component: HomeComponent},
   {path: '**', component: PagenotfoundComponent}
