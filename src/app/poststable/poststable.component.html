@@ -1,9 +1,12 @@
 <br />
 <div class="container">
+    
  <div class="row">
  <div  class="col-md-12">
+ 
  <a [routerLink] = "['/admin/newPost']" class="btn btn-success btn-sm pull-right">+&nbsp;&nbsp;New Post</a><br /><br />
  <table *ngFor= "let posts of post"class="table table-hover">
+<a [routerLink] = "['/admin/post', posts._id]"></a>
  <thead>
  <tr>
  <th>Title</th>
